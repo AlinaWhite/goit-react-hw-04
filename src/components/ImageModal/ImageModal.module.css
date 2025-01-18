@@ -1,0 +1,103 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 100%;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.85);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transition: opacity 350ms ease-in-out;
+}
+
+.modalOverlayOpen {
+  opacity: 1;
+}
+
+.modalOverlayClose {
+  opacity: 0;
+}
+
+.modal {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  outline: none;
+
+  box-shadow: 0px 0px 6px 0 rgba(255, 255, 255, 0.4),
+    0px 0px 2px 0 rgba(255, 255, 255, 0.4),
+    0px 0px 2px 0 rgba(255, 255, 255, 0.24);
+}
+
+.modalBtn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  padding: 3px;
+  aspect-ratio: 1/1;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.imageStats {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 99999999;
+
+  width: 100%;
+  padding: 1.5rem 0.75rem 0.75rem;
+  color: #fff;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(0.5rem);
+  border: 2px solid transparent;
+  box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.7);
+
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  transition: opacity 350ms linear;
+  animation: fade-out 4000ms linear;
+}
+
+.imageStats:hover {
+  opacity: 1;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.imageStats span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  text-transform: capitalize;
+}
+
+.imageStats > span:not(:last-of-type) {
+  cursor: pointer;
+}
