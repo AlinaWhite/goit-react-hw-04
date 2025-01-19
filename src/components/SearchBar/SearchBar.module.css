@@ -6,37 +6,37 @@
   padding: 0.5rem 0;
   margin-bottom: 1.5rem;
   background-color: royalblue;
+}
 
-  & form {
-    display: flex;
-    gap: 0.25rem;
+.formContainer {
+  display: flex;
+  gap: 0.25rem;
 
-    width: 30%;
+  width: 30%;
 
-    position: relative;
-  }
+  position: relative;
+}
 
-  & input {
-    box-sizing: border-box;
-    width: 100%;
-    height: 34px;
-    padding: 0 0.5rem;
-    border: none;
-    border-radius: 0.25rem;
-    background-color: #fafafa;
-  }
+.inputStyle {
+  box-sizing: border-box;
+  width: 100%;
+  height: 34px;
+  padding: 0 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: #fafafa;
+}
 
-  & input::placeholder {
-    transition: color 250ms ease-in-out;
-  }
+.inputStyle::placeholder {
+  transition: color 250ms ease-in-out;
+}
 
-  & input:hover::placeholder {
-    color: #000;
-  }
+.inputStyle:hover::placeholder {
+  color: #000;
+}
 
-  & input:focus {
-    outline: 2px solid #000;
-  }
+.inputStyle:focus {
+  outline: 2px solid #000;
 }
 
 .searchBtn {

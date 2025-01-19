@@ -20,8 +20,9 @@ const SearchBar = ({ onSearch }) => {
   };
   return (
     <div className={css.searchBarContainer}>
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form className={css.formContainer} onSubmit={(e) => handleSubmit(e)}>
         <input
+          className={css.inputStyle}
           type="text"
           name="searchBar"
           autoComplete="off"

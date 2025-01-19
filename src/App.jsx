@@ -1,5 +1,4 @@
 import "./App.css";
-import Header from "./components/AppHeader/AppHeader";
 import SearchBar from "./components/SearchBar/SearchBar";
 import ImageGallery from "./components/ImageGallery/ImageGallery";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
@@ -7,6 +6,8 @@ import ImageModal from "./components/ImageModal/ImageModal";
 import { ThreeCircles } from "react-loader-spinner";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import toast, { Toaster } from "react-hot-toast";
+import { fetchingGalleryPage } from "./utils/gallery-api";
+import { useEffect, useState } from "react";
 
 function App() {
   const [gallery, setGallery] = useState([]);
@@ -84,7 +85,6 @@ function App() {
 
   return (
     <>
-      <Header />
       <Toaster />
       <SearchBar onSearch={handleSearch} />
       {gallery.length > 0 && (
@@ -93,8 +93,8 @@ function App() {
       {isLoading ? (
         <ThreeCircles
           innerCircleColor="#ec4646"
-          middleCircleColor="#4169e1"
-          outerCircleColor="#08265f"
+          middleCircleColor="#ec4646"
+          outerCircleColor="#ec4646"
           wrapperStyle={{
             justifyContent: "center",
           }}
